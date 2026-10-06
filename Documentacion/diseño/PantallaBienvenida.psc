@@ -96,6 +96,7 @@ SubProceso PantallaPrincipal(nombre)
 FinSubProceso
 
 SubProceso Perfil(nombre, email)
+	Definir opcion Como Entero
 	Escribir "Home"
 	Escribir "English"
 	Escribir "Español"
@@ -114,4 +115,25 @@ SubProceso Perfil(nombre, email)
 	Escribir "Edit"
 	Escribir "Change password"
 	Escribir "Change profile image"
+FinSubProceso
+
+SubProceso EditarPerfil(nombre, email)
+	Definir opcion Como Entero
+	Escribir "Home"
+	Escribir "English"
+	Escribir "Español"
+	Escribir "Hello, ", nombre
+	Escribir "Profile"
+	Escribir "Users"
+	Escribir "Tasks"
+	Escribir "Log out"
+	
+	Escribir "Edit profile"
+	Escribir "name"
+	Escribir nombre
+	Escribir "email"
+	Escribir email
+	Escribir "1. Save"
+	Escribir "2. Cancel"
+	Leer opcion
 FinSubProceso
