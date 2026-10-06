@@ -81,3 +81,16 @@ SubProceso RestablecerContrasena
 	Leer repetirPassword
 	Escribir "Reset password"
 FinSubProceso
+
+SubProceso PantallaPrincipal(nombre)
+	Escribir "Hello, ", nombre
+	Escribir "Welcome"
+	Escribir "Inicio de sesión exitoso"
+	Escribir "Home"
+	Escribir "English"
+	Escribir "Español"
+	Escribir "Profile"
+	Escribir "Users"
+	Escribir "Tasks"
+	Escribir "Log out"
+FinSubProceso
