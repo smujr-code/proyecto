@@ -94,3 +94,24 @@ SubProceso PantallaPrincipal(nombre)
 	Escribir "Tasks"
 	Escribir "Log out"
 FinSubProceso
+
+SubProceso Perfil(nombre, email)
+	Escribir "Home"
+	Escribir "English"
+	Escribir "Español"
+	Escribir "Hello, ", nombre
+	Escribir "Profile"
+	Escribir "Users"
+	Escribir "Tasks"
+	Escribir "Log out"
+	
+	Escribir "Profile"
+	Escribir "Delete Profile image"
+	Escribir "Name"
+	Escribir nombre
+	Escribir "email"
+	Escribir email
+	Escribir "Edit"
+	Escribir "Change password"
+	Escribir "Change profile image"
+FinSubProceso
