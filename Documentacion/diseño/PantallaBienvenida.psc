@@ -3,13 +3,22 @@ Proceso OrganizadorTareas
 FinProceso
 
 SubProceso PantallaBienvenida
+	Definir opcion Como Entero
 	Escribir "ORGANIZADOR DE TAREAS"
 	Escribir "Bienvenido al sistema"
-	Escribir "Home"
-	Escribir "English"
-	Escribir "Español"
-	Escribir "Sign up"
-	Escribir "Log in"
+	Escribir "1. Home"
+	Escribir "2. English"
+	Escribir "3. Español"
+	Escribir "4. Sign up"
+	Escribir "5. Log in"
+	Leer opcion
+	
+	Segun opcion Hacer
+		4:
+			Registro
+		5:
+			Login
+	FinSegun
 FinSubProceso
 
 SubProceso Registro
@@ -27,21 +36,35 @@ FinSubProceso
 
 SubProceso Login
 	Definir email, password Como Caracter
+	Definir opcion Como Entero
 	Escribir "Login"
 	PedirEmail(email)
 	Escribir "Password"
 	Leer password
-	Escribir "remember me"
-	Escribir "Log in"
-	Escribir "forgot password?"
+	Escribir "1. remember me"
+	Escribir "2. Log in"
+	Escribir "3. forgot password?"
+	Leer opcion
+	
+	Segun opcion Hacer
+		3:
+			RecuperarContrasena
+	FinSegun
 FinSubProceso
 
 SubProceso RecuperarContrasena
 	Definir email Como Caracter
+	Definir opcion Como Entero
 	Escribir "Forgot password"
 	PedirEmail(email)
-	Escribir "Send"
-	Escribir "Cancel"
+	Escribir "1. Send"
+	Escribir "2. Cancel"
+	Leer opcion
+	
+	Segun opcion Hacer
+		1:
+			RestablecerContrasena
+	FinSegun
 FinSubProceso
 
 SubProceso PedirEmail(email Por Referencia)
