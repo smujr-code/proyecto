@@ -48,3 +48,13 @@ SubProceso PedirEmail(email Por Referencia)
 	Escribir "email"
 	Leer email
 FinSubProceso
+
+SubProceso RestablecerContrasena
+	Definir password, repetirPassword Como Caracter
+	Escribir "Password reset"
+	Escribir "password"
+	Leer password
+	Escribir "Repeat password"
+	Leer repetirPassword
+	Escribir "Reset password"
+FinSubProceso
