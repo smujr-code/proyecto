@@ -120,7 +120,10 @@ SubProceso Perfil(nombre, email)
 		1:
 			EditarPerfil(nombre, email)
 		2:
-			CambiarContrasena
+			CambiarContrasena(nombre)
+			
+		3:
+			CambiarImagenPerfil(nombre)
 	FinSegun
 FinSubProceso
 
@@ -145,14 +148,39 @@ SubProceso EditarPerfil(nombre, email)
 	Leer opcion
 FinSubProceso
 
-SubProceso CambiarContrasena
+SubProceso CambiarContrasena(nombre)
 	Definir opcion Como Entero
 	Escribir "Home"
 	Escribir "English"
 	Escribir "Español"
-	Escribir "Please enter your password to continue"
-	Escribir "PASSWORD"
-	Escribir "1. Send"
+	Escribir "Hello, ", nombre
+	Escribir "Profile"
+	Escribir "Users"
+	Escribir "Tasks"
+	Escribir "Log out"
+	
+	Escribir "Edit password"
+	Escribir "Current Password"
+	Escribir "New password"
+	Escribir "Repeat new password"
+	Escribir "1. Save"
 	Escribir "2. Cancel"
+	Leer opcion
+FinSubProceso
+SubProceso CambiarImagenPerfil(nombre)
+	Definir opcion Como Entero
+	Escribir "Home"
+	Escribir "English"
+	Escribir "Español"
+	Escribir "Hello, ", nombre
+	Escribir "Profile"
+	Escribir "Users"
+	Escribir "Tasks"
+	Escribir "Log out"
+	
+	Escribir "Edit profile image"
+	Escribir "1. Buscar Imagen"
+	Escribir "2. Save"
+	Escribir "3. Cancel"
 	Leer opcion
 FinSubProceso
