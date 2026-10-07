@@ -112,9 +112,16 @@ SubProceso Perfil(nombre, email)
 	Escribir nombre
 	Escribir "email"
 	Escribir email
-	Escribir "Edit"
-	Escribir "Change password"
-	Escribir "Change profile image"
+	Escribir "1. Edit"
+	Escribir "2. Change password"
+	Escribir "3. Change profile image"
+	Leer opcion
+	Segun opcion Hacer
+		1:
+			EditarPerfil(nombre, email)
+		2:
+			CambiarContrasena
+	FinSegun
 FinSubProceso
 
 SubProceso EditarPerfil(nombre, email)
@@ -134,6 +141,18 @@ SubProceso EditarPerfil(nombre, email)
 	Escribir "email"
 	Escribir email
 	Escribir "1. Save"
+	Escribir "2. Cancel"
+	Leer opcion
+FinSubProceso
+
+SubProceso CambiarContrasena
+	Definir opcion Como Entero
+	Escribir "Home"
+	Escribir "English"
+	Escribir "Español"
+	Escribir "Please enter your password to continue"
+	Escribir "PASSWORD"
+	Escribir "1. Send"
 	Escribir "2. Cancel"
 	Leer opcion
 FinSubProceso
