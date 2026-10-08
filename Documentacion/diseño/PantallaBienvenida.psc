@@ -6,10 +6,10 @@ Proceso OrganizadorTareas
 	
 	cantidadTareas = 0
 	
-	PantallaBienvenida	
+	PantallaBienvenida(cantidadTareas, descripciones)
 FinProceso
 
-SubProceso PantallaBienvenida
+SubProceso PantallaBienvenida(cantidadTareas Por Referencia, descripciones)
 	Definir opcion Como Entero
 	Escribir "ORGANIZADOR DE TAREAS"
 	Escribir "Bienvenido al sistema"
@@ -24,7 +24,7 @@ SubProceso PantallaBienvenida
 		4:
 			Registro
 		5:
-			Login
+			Login(cantidadTareas, descripciones)
 	FinSegun
 FinSubProceso
 
@@ -41,10 +41,12 @@ SubProceso Registro
 	Escribir "Cancel"
 FinSubProceso
 
-SubProceso Login
-	Definir email, password Como Caracter
+SubProceso Login(cantidadTareas Por Referencia, descripciones)
+	Definir nombre, email, password Como Caracter
 	Definir opcion Como Entero
 	Escribir "Login"
+	Escribir "Name"
+	Leer nombre
 	PedirEmail(email)
 	Escribir "Password"
 	Leer password
@@ -54,6 +56,8 @@ SubProceso Login
 	Leer opcion
 	
 	Segun opcion Hacer
+		2:
+			PantallaPrincipal(nombre, cantidadTareas, descripciones)
 		3:
 			RecuperarContrasena
 	FinSegun
@@ -89,7 +93,9 @@ SubProceso RestablecerContrasena
 	Escribir "Reset password"
 FinSubProceso
 
-SubProceso PantallaPrincipal(nombre)
+SubProceso PantallaPrincipal(nombre, cantidadTareas, descripciones)
+	Definir opcion Como Entero
+	
 	Escribir "Hello, ", nombre
 	Escribir "Welcome"
 	Escribir "Inicio de sesión exitoso"
@@ -100,6 +106,18 @@ SubProceso PantallaPrincipal(nombre)
 	Escribir "Users"
 	Escribir "Tasks"
 	Escribir "Log out"
+	
+	Escribir "Seleccione una opcion"
+	Leer opcion
+	
+	Segun opcion Hacer
+		1:
+			Perfil(nombre, "")
+		2:
+			Usuarios(nombre)
+		3:
+			Tareas(nombre, cantidadTareas, descripciones)
+	FinSegun
 FinSubProceso
 
 SubProceso Usuarios(nombre)
@@ -191,18 +209,18 @@ SubProceso EditarUsuario(nombre)
 FinSubProceso
 
 SubProceso Tareas(nombre, cantidadTareas, descripciones)
-    Definir busqueda Como Caracter
-    Definir opcion Como Entero
-    Definir i Como Entero
+	Definir busqueda Como Caracter
+	Definir opcion, numeroTarea Como Entero
+	Definir i Como Entero
 	
-    Escribir "Home"
-    Escribir "English"
-    Escribir "Español"
-    Escribir "Hello, ", nombre
-    Escribir "Profile"
-    Escribir "Users"
-    Escribir "Tasks"
-    Escribir "Log out"
+	Escribir "Home"
+	Escribir "English"
+	Escribir "Español"
+	Escribir "Hello, ", nombre
+	Escribir "Profile"
+	Escribir "Users"
+	Escribir "Tasks"
+	Escribir "Log out"
 	
 	Escribir "Tasks"
 	Escribir "1. New Task"
@@ -218,12 +236,19 @@ SubProceso Tareas(nombre, cantidadTareas, descripciones)
 	FinSegun
 	
 	Para i = 1 Hasta cantidadTareas Hacer
-		Escribir descripciones[i]
+		Escribir i, ". ", descripciones[i]
 	FinPara
 	
-    Escribir "1. Newer"
-    Escribir "2. Older"
-    Leer opcion
+	Escribir "Seleccione una tarea para ver el detalle"
+	Leer numeroTarea
+	
+	Si numeroTarea >= 1 Y numeroTarea <= cantidadTareas Entonces
+		DetalleTarea(nombre, numeroTarea, descripciones)
+	FinSi
+	
+	Escribir "1. Newer"
+	Escribir "2. Older"
+	Leer opcion
 FinSubProceso
 
 SubProceso NuevaTarea(nombre, cantidadTareas Por Referencia, descripciones)
@@ -290,7 +315,7 @@ SubProceso EditarTarea(nombre, cantidadTareas, descripciones)
 	FinSi
 FinSubProceso
 
-SubProceso DetalleTarea(nombre)
+SubProceso DetalleTarea(nombre, numeroTarea, descripciones)
 	Escribir "Home"
 	Escribir "English"
 	Escribir "Español"
@@ -303,13 +328,9 @@ SubProceso DetalleTarea(nombre)
 	Escribir "Task"
 	Escribir "<< back to index"
 	Escribir "ID"
-	Escribir "18"
+	Escribir numeroTarea
 	Escribir "Description"
-	Escribir "urgent task"
-	Escribir "Created at"
-	Escribir "2020-10-16 09:05:55"
-	Escribir "Updated at"
-	Escribir "2020-10-23 03:05:55"
+	Escribir descripciones[numeroTarea]
 	Escribir "Edit"
 	Escribir "Delete"
 FinSubProceso
