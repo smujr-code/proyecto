@@ -1,5 +1,12 @@
 Proceso OrganizadorTareas
-    PantallaBienvenida	
+	Definir cantidadTareas Como Entero
+	Definir descripciones Como Caracter
+	
+	Dimension descripciones[100]
+	
+	cantidadTareas = 0
+	
+	PantallaBienvenida	
 FinProceso
 
 SubProceso PantallaBienvenida
@@ -183,9 +190,10 @@ SubProceso EditarUsuario(nombre)
 	Leer opcion
 FinSubProceso
 
-SubProceso Tareas(nombre)
+SubProceso Tareas(nombre, cantidadTareas, descripciones)
     Definir busqueda Como Caracter
     Definir opcion Como Entero
+    Definir i Como Entero
 	
     Escribir "Home"
     Escribir "English"
@@ -202,11 +210,9 @@ SubProceso Tareas(nombre)
     Escribir "Search"
     Leer busqueda
 	
-    Escribir "Otra tarea"
-    Escribir "Una tarea importante"
-    Escribir "Una tarea interesante"
-    Escribir "Xss?"
-    Escribir "Para hacer hoy urgentemente"
+    Para i = 1 Hasta cantidadTareas Hacer
+        Escribir descripciones[i]
+    FinPara
 	
     Escribir "1. Newer"
     Escribir "2. Older"
@@ -255,7 +261,31 @@ SubProceso EditarTarea(nombre)
 	Escribir "1. Save"
 	Escribir "2. Cancel"
 	Leer opcion
-//FinSubProceso
+FinSubProceso
+
+SubProceso DetalleTarea(nombre)
+	Escribir "Home"
+	Escribir "English"
+	Escribir "Español"
+	Escribir "Hello, ", nombre
+	Escribir "Profile"
+	Escribir "Users"
+	Escribir "Tasks"
+	Escribir "Log out"
+	
+	Escribir "Task"
+	Escribir "<< back to index"
+	Escribir "ID"
+	Escribir "18"
+	Escribir "Description"
+	Escribir "urgent task"
+	Escribir "Created at"
+	Escribir "2020-10-16 09:05:55"
+	Escribir "Updated at"
+	Escribir "2020-10-23 03:05:55"
+	Escribir "Edit"
+	Escribir "Delete"
+FinSubProceso
 
 SubProceso Perfil(nombre, email)
 	Definir opcion Como Entero
