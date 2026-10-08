@@ -213,6 +213,28 @@ SubProceso Tareas(nombre)
     Leer opcion
 FinSubProceso
 
+SubProceso NuevaTarea(nombre)
+	Definir descripcion Como Caracter
+	Definir opcion Como Entero
+	
+	Escribir "Home"
+	Escribir "English"
+	Escribir "Español"
+	Escribir "Hello, ", nombre
+	Escribir "Profile"
+	Escribir "Users"
+	Escribir "Tasks"
+	Escribir "Log out"
+	
+	Escribir "New Task"
+	Escribir "Description"
+	Leer descripcion
+	
+	Escribir "1. Send"
+	Escribir "2. Cancel"
+	Leer opcion
+FinSubProceso
+
 SubProceso Perfil(nombre, email)
 	Definir opcion Como Entero
 	Escribir "Home"
