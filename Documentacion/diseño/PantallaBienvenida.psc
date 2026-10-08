@@ -315,6 +315,22 @@ SubProceso EditarTarea(nombre, cantidadTareas, descripciones)
 	FinSi
 FinSubProceso
 
+SubProceso EliminarTarea(numeroTarea, cantidadTareas Por Referencia, descripciones)
+	Definir opcion Como Entero
+	Escribir "Delete Task"
+	Escribir "Description"
+	Escribir descripciones[numeroTarea]
+	Escribir "Are you sure?"
+	Escribir "1. Delete"
+	Escribir "2. Cancel"
+	Leer opcion
+	
+	Si opcion = 1 Entonces
+		descripciones[numeroTarea] = ""
+		Escribir "Task deleted"
+	FinSi
+FinSubProceso
+
 SubProceso DetalleTarea(nombre, numeroTarea, cantidadTareas, descripciones)
 	Definir opcion Como Entero
 	
@@ -340,6 +356,8 @@ SubProceso DetalleTarea(nombre, numeroTarea, cantidadTareas, descripciones)
 	Segun opcion Hacer
 		1:
 			EditarTarea(nombre, cantidadTareas, descripciones)
+		2:
+			EliminarTarea(numeroTarea, cantidadTareas, descripciones)
 	FinSegun
 FinSubProceso
 
