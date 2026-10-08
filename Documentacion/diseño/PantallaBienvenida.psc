@@ -204,22 +204,29 @@ SubProceso Tareas(nombre, cantidadTareas, descripciones)
     Escribir "Tasks"
     Escribir "Log out"
 	
-    Escribir "Tasks"
-    Escribir "New Task"
+	Escribir "Tasks"
+	Escribir "1. New Task"
+	Escribir "2. Search"
+	Leer opcion
 	
-    Escribir "Search"
-    Leer busqueda
+	Segun opcion Hacer
+		1:
+			NuevaTarea(nombre, cantidadTareas, descripciones)
+		2:
+			Escribir "Search"
+			Leer busqueda
+	FinSegun
 	
-    Para i = 1 Hasta cantidadTareas Hacer
-        Escribir descripciones[i]
-    FinPara
+	Para i = 1 Hasta cantidadTareas Hacer
+		Escribir descripciones[i]
+	FinPara
 	
     Escribir "1. Newer"
     Escribir "2. Older"
     Leer opcion
 FinSubProceso
 
-SubProceso NuevaTarea(nombre)
+SubProceso NuevaTarea(nombre, cantidadTareas Por Referencia, descripciones)
 	Definir descripcion Como Caracter
 	Definir opcion Como Entero
 	
@@ -239,6 +246,13 @@ SubProceso NuevaTarea(nombre)
 	Escribir "1. Send"
 	Escribir "2. Cancel"
 	Leer opcion
+	
+	Segun opcion Hacer
+		1:
+			cantidadTareas = cantidadTareas + 1
+			descripciones[cantidadTareas] = descripcion
+			Escribir "Task saved"
+	FinSegun
 FinSubProceso
 
 SubProceso EditarTarea(nombre)
