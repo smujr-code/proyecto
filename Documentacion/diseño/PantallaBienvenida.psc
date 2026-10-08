@@ -255,9 +255,9 @@ SubProceso NuevaTarea(nombre, cantidadTareas Por Referencia, descripciones)
 	FinSegun
 FinSubProceso
 
-SubProceso EditarTarea(nombre)
+SubProceso EditarTarea(nombre, cantidadTareas, descripciones)
 	Definir descripcion Como Caracter
-	Definir opcion Como Entero
+	Definir opcion, numeroTarea Como Entero
 	
 	Escribir "Home"
 	Escribir "English"
@@ -269,12 +269,25 @@ SubProceso EditarTarea(nombre)
 	Escribir "Log out"
 	
 	Escribir "Edit Task"
-	Escribir "Description"
-	Leer descripcion
+	Escribir "Seleccione el numero de la tarea"
+	Leer numeroTarea
 	
-	Escribir "1. Save"
-	Escribir "2. Cancel"
-	Leer opcion
+	Si numeroTarea >= 1 Y numeroTarea <= cantidadTareas Entonces
+		Escribir "Description"
+		Escribir descripciones[numeroTarea]
+		Leer descripcion
+		
+		Escribir "1. Save"
+		Escribir "2. Cancel"
+		Leer opcion
+		
+		Si opcion = 1 Entonces
+			descripciones[numeroTarea] = descripcion
+			Escribir "Task updated"
+		FinSi
+	SiNo
+		Escribir "Task not found"
+	FinSi
 FinSubProceso
 
 SubProceso DetalleTarea(nombre)
