@@ -129,6 +129,33 @@ SubProceso Usuarios(nombre)
 	Escribir "Older"
 FinSubProceso
 
+SubProceso DetalleUsuario(nombre)
+	Escribir "Home"
+	Escribir "English"
+	Escribir "Español"
+	Escribir "Hello, ", nombre
+	Escribir "Profile"
+	Escribir "Users"
+	Escribir "Tasks"
+	Escribir "Log out"
+	
+	Escribir "User"
+	Escribir "<< back to index"
+	Escribir "name"
+	Escribir "Mary"
+	Escribir "email"
+	Escribir "mary@example.com"
+	Escribir "active"
+	Escribir "yes"
+	Escribir "Administrator"
+	Escribir "No"
+	Escribir "Created at"
+	Escribir "2020-10-16 09:05:55"
+	Escribir "Updated at"
+	Escribir "2020-10-23 03:05:55"
+	Escribir "Edit"
+	Escribir "Delete"
+FinSubProceso
 SubProceso Perfil(nombre, email)
 	Definir opcion Como Entero
 	Escribir "Home"
