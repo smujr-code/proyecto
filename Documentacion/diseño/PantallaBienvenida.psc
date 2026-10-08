@@ -477,6 +477,14 @@ SubProceso CambiarImagenPerfil(nombre)
 	Escribir "2. Save"
 	Escribir "3. Cancel"
 	Leer opcion
+	Segun opcion Hacer
+		1:
+			Escribir "Imagen seleccionada"
+		2:
+			Escribir "Profile image updated"
+		3:
+			Escribir "Cancel"
+	FinSegun
 FinSubProceso
 
 SubProceso EliminarImagenPerfil(nombre)
