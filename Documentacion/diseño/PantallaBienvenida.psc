@@ -243,7 +243,7 @@ SubProceso Tareas(nombre, cantidadTareas, descripciones)
 	Leer numeroTarea
 	
 	Si numeroTarea >= 1 Y numeroTarea <= cantidadTareas Entonces
-		DetalleTarea(nombre, numeroTarea, descripciones)
+		DetalleTarea(nombre, numeroTarea, cantidadTareas, descripciones)
 	FinSi
 	
 	Escribir "1. Newer"
@@ -315,7 +315,9 @@ SubProceso EditarTarea(nombre, cantidadTareas, descripciones)
 	FinSi
 FinSubProceso
 
-SubProceso DetalleTarea(nombre, numeroTarea, descripciones)
+SubProceso DetalleTarea(nombre, numeroTarea, cantidadTareas, descripciones)
+	Definir opcion Como Entero
+	
 	Escribir "Home"
 	Escribir "English"
 	Escribir "Español"
@@ -331,8 +333,14 @@ SubProceso DetalleTarea(nombre, numeroTarea, descripciones)
 	Escribir numeroTarea
 	Escribir "Description"
 	Escribir descripciones[numeroTarea]
-	Escribir "Edit"
-	Escribir "Delete"
+	Escribir "1. Edit"
+	Escribir "2. Delete"
+	Leer opcion
+	
+	Segun opcion Hacer
+		1:
+			EditarTarea(nombre, cantidadTareas, descripciones)
+	FinSegun
 FinSubProceso
 
 SubProceso Perfil(nombre, email)
