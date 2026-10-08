@@ -505,4 +505,3 @@ SubProceso EliminarImagenPerfil(nombre)
 	Escribir "2. Cancel"
 	Leer opcion
 FinSubProceso
-
