@@ -95,6 +95,40 @@ SubProceso PantallaPrincipal(nombre)
 	Escribir "Log out"
 FinSubProceso
 
+SubProceso Usuarios(nombre)
+	Escribir "Home"
+	Escribir "English"
+	Escribir "Español"
+	Escribir "Hello, ", nombre
+	Escribir "Profile"
+	Escribir "Users"
+	Escribir "Tasks"
+	Escribir "Log out"
+	
+	Escribir "Users"
+	Escribir "New user"
+	Escribir "Name"
+	Escribir "email"
+	Escribir "Active"
+	Escribir "Administrator"
+	Escribir "Created at"
+	
+	Escribir "David"
+	Escribir "admin@example.com"
+	Escribir "Si"
+	Escribir "Si"
+	Escribir "2025-01-01 00:00:00"
+	
+	Escribir "Miguel"
+	Escribir "migue@example.com"
+	Escribir "Si"
+	Escribir "No"
+	Escribir "2025-01-01 00:00:00"
+	
+	Escribir "Newer"
+	Escribir "Older"
+FinSubProceso
+
 SubProceso Perfil(nombre, email)
 	Definir opcion Como Entero
 	Escribir "Home"
