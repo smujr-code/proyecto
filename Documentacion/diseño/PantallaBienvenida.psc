@@ -430,7 +430,9 @@ SubProceso EditarPerfil(nombre, email)
 FinSubProceso
 
 SubProceso CambiarContrasena(nombre)
+	Definir passwordActual, nuevaPassword, repetirPassword Como Caracter
 	Definir opcion Como Entero
+	
 	Escribir "Home"
 	Escribir "English"
 	Escribir "Español"
@@ -442,12 +444,23 @@ SubProceso CambiarContrasena(nombre)
 	
 	Escribir "Edit password"
 	Escribir "Current Password"
+	Leer passwordActual
+	
 	Escribir "New password"
+	Leer nuevaPassword
+	
 	Escribir "Repeat new password"
+	Leer repetirPassword
+	
 	Escribir "1. Save"
 	Escribir "2. Cancel"
 	Leer opcion
+	
+	Si opcion = 1 Entonces
+		Escribir "Password updated"
+	FinSi
 FinSubProceso
+
 SubProceso CambiarImagenPerfil(nombre)
 	Definir opcion Como Entero
 	Escribir "Home"
