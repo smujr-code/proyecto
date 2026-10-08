@@ -156,6 +156,33 @@ SubProceso DetalleUsuario(nombre)
 	Escribir "Edit"
 	Escribir "Delete"
 FinSubProceso
+
+SubProceso EditarUsuario(nombre)
+	Definir opcion Como Entero
+	
+	Escribir "Home"
+	Escribir "English"
+	Escribir "Español"
+	Escribir "Hello, ", nombre
+	Escribir "Profile"
+	Escribir "Users"
+	Escribir "Tasks"
+	Escribir "Log out"
+	
+	Escribir "Edit user"
+	Escribir "Name"
+	Escribir "datos registrado"
+	Escribir "email"
+	Escribir "datos registrados"
+	Escribir "Password"
+	Escribir "Repeat password"
+	Escribir "Active"
+	Escribir "Administrator"
+	Escribir "1. Save"
+	Escribir "2. Cancel"
+	Leer opcion
+FinSubProceso
+
 SubProceso Perfil(nombre, email)
 	Definir opcion Como Entero
 	Escribir "Home"
