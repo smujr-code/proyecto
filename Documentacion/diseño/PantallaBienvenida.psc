@@ -102,10 +102,10 @@ SubProceso PantallaPrincipal(nombre, cantidadTareas, descripciones)
 	Escribir "Home"
 	Escribir "English"
 	Escribir "Español"
-	Escribir "Profile"
-	Escribir "Users"
-	Escribir "Tasks"
-	Escribir "Log out"
+	Escribir "1. Profile"
+	Escribir "2. Users"
+	Escribir "3. Tasks"
+	Escribir "4. Log out"
 	
 	Escribir "Seleccione una opcion"
 	Leer opcion
