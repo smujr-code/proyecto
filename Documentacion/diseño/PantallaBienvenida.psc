@@ -115,15 +115,18 @@ SubProceso Perfil(nombre, email)
 	Escribir "1. Edit"
 	Escribir "2. Change password"
 	Escribir "3. Change profile image"
+	Escribir "4. Delete Profile image"
 	Leer opcion
+	
 	Segun opcion Hacer
 		1:
 			EditarPerfil(nombre, email)
 		2:
 			CambiarContrasena(nombre)
-			
 		3:
 			CambiarImagenPerfil(nombre)
+		4:
+			EliminarImagenPerfil(nombre)
 	FinSegun
 FinSubProceso
 
@@ -184,3 +187,23 @@ SubProceso CambiarImagenPerfil(nombre)
 	Escribir "3. Cancel"
 	Leer opcion
 FinSubProceso
+
+SubProceso EliminarImagenPerfil(nombre)
+	Definir opcion Como Entero
+	
+	Escribir "Home"
+	Escribir "English"
+	Escribir "Español"
+	Escribir "Hello, ", nombre
+	Escribir "Profile"
+	Escribir "Users"
+	Escribir "Tasks"
+	Escribir "Log out"
+	
+	Escribir "Delete Profile image"
+	Escribir "Are you sure?"
+	Escribir "1. Save"
+	Escribir "2. Cancel"
+	Leer opcion
+FinSubProceso
+
