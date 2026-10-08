@@ -183,6 +183,36 @@ SubProceso EditarUsuario(nombre)
 	Leer opcion
 FinSubProceso
 
+SubProceso Tareas(nombre)
+    Definir busqueda Como Caracter
+    Definir opcion Como Entero
+	
+    Escribir "Home"
+    Escribir "English"
+    Escribir "Español"
+    Escribir "Hello, ", nombre
+    Escribir "Profile"
+    Escribir "Users"
+    Escribir "Tasks"
+    Escribir "Log out"
+	
+    Escribir "Tasks"
+    Escribir "New Task"
+	
+    Escribir "Search"
+    Leer busqueda
+	
+    Escribir "Otra tarea"
+    Escribir "Una tarea importante"
+    Escribir "Una tarea interesante"
+    Escribir "Xss?"
+    Escribir "Para hacer hoy urgentemente"
+	
+    Escribir "1. Newer"
+    Escribir "2. Older"
+    Leer opcion
+FinSubProceso
+
 SubProceso Perfil(nombre, email)
 	Definir opcion Como Entero
 	Escribir "Home"
