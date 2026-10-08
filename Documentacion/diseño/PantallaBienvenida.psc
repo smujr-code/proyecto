@@ -397,7 +397,9 @@ SubProceso Perfil(nombre, email)
 FinSubProceso
 
 SubProceso EditarPerfil(nombre, email)
+	Definir nuevoNombre, nuevoEmail Como Caracter
 	Definir opcion Como Entero
+	
 	Escribir "Home"
 	Escribir "English"
 	Escribir "Español"
@@ -410,11 +412,21 @@ SubProceso EditarPerfil(nombre, email)
 	Escribir "Edit profile"
 	Escribir "name"
 	Escribir nombre
+	Leer nuevoNombre
+	
 	Escribir "email"
 	Escribir email
+	Leer nuevoEmail
+	
 	Escribir "1. Save"
 	Escribir "2. Cancel"
 	Leer opcion
+	
+	Si opcion = 1 Entonces
+		nombre = nuevoNombre
+		email = nuevoEmail
+		Escribir "Profile updated"
+	FinSi
 FinSubProceso
 
 SubProceso CambiarContrasena(nombre)
