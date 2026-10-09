@@ -501,7 +501,14 @@ SubProceso EliminarImagenPerfil(nombre)
 	
 	Escribir "Delete Profile image"
 	Escribir "Are you sure?"
-	Escribir "1. Save"
+	Escribir "1. Delete"
 	Escribir "2. Cancel"
 	Leer opcion
+	
+	Segun opcion Hacer
+		1:
+			Escribir "Profile image deleted"
+		2:
+			Escribir "Cancel"
+	FinSegun
 FinSubProceso
